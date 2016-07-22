@@ -11,8 +11,16 @@ class Autoloader
     }
     
     //toda vez que ele percorrer pela class
-    private function loader($class)
+    private function loader($className)
     {
+        $class = str_replace('_', DIRECTORY_SEPARATOR, $className) . '.php';
         
+        if(!empty($this->diretorios))
+        {
+            foreach ($this->diretorios as $diretorio){
+                $classPath = rtrim($diretorio, '/') . DIRECTORY_SEPARATOR . $class;
+                if (file_exists($classPath)){}
+            }
+        }
     }
 }
