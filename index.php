@@ -5,9 +5,7 @@ header("Content-Type: text/html; charset=utf-8");
 require_once 'library/AtributosDinamicos.php'; 
 require_once 'library/MetodosDinamico.php'; 
 
-function __autoload($class){
-    
-}
+spl_autoload_register();
 
 $atributos = new AtributosDinamicos();
 
