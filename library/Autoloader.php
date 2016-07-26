@@ -7,6 +7,7 @@ class Autoloader
     
     public function register()
     {
+        //Metodo que eu quero chamar - O proprio objeto
         spl_autoload_register(array($this,'loader'));
     }
     
