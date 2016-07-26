@@ -14,14 +14,25 @@ class Autoloader
     //toda vez que ele percorrer pela class
     private function loader($className)
     {
+        //Separação de diretorio substituindo _
         $class = str_replace('_', DIRECTORY_SEPARATOR, $className) . '.php';
         
         if(!empty($this->diretorios))
         {
+            //Vasculha o diretorio
             foreach ($this->diretorios as $diretorio){
+                
+                //Carregando o arquivo
                 $classPath = rtrim($diretorio, '/') . DIRECTORY_SEPARATOR . $class;
-                if (file_exists($classPath)){}
+                
+                //Verifica se o arquivo existe dentro desse diretorio
+                if (file_exists($classPath)){
+                    return include_once $classPath;
+                }
             }
+        }
+        if (file_exists($class)){
+            return include_once $class;
         }
     }
 }

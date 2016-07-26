@@ -6,7 +6,10 @@ require_once 'library/AtributosDinamicos.php';
 require_once 'library/MetodosDinamico.php'; 
 
 //registra funções de autoloads
-spl_autoload_register();
+require_once 'library/Autoloader.php';
+
+$loader = new Autoloader();
+$loader0->register();
 
 $atributos = new AtributosDinamicos();
 
