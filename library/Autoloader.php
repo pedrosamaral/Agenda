@@ -34,5 +34,10 @@ class Autoloader
         if (file_exists($class)){
             return include_once $class;
         }
+        
+        $classPath = stream_resolve_include_path($class);
+        if ($classPath !== false){
+            return include_once $classPath;
+        }
     }
 }

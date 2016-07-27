@@ -26,6 +26,6 @@ class MetodosDinamicos
     
     public function getNome()
     {
-        return 'Pedro Paulo Amaral';
+        return 'Pedro Paulo Silva';
     }
 }
