@@ -16,3 +16,19 @@ function imprimir()
 imprimir();
 
 echo $nome . $sobrenome;
+
+echo "<hr>";
+echo "<hr>";
+
+$variaveis2 = [
+		"nome" => "Pedro",
+		"sobrenome" => "Amaral",
+		"empresa" => [
+			"nome" => "Treina Web",
+			"Cursos" => "Cursos"
+		],
+];
+extract($variaveis2);
+
+//Imprime o resultado
+echo $empresa["nome"];
