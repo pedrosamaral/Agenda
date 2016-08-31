@@ -14,8 +14,12 @@ class Autoloader
     //toda vez que ele percorrer pela class
     private function loader($className)
     {
+        if(strstr($className, '\\')){
+            $class = str_replace('\\', DIRECTORY_SEPARATOR, ltrim($className)) .  '.php';
+        }else{
         //Separação de diretorio substituindo _
         $class = str_replace('_', DIRECTORY_SEPARATOR, $className) . '.php';
+        }
         
         if(!empty($this->diretorios))
         {

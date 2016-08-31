@@ -1,5 +1,7 @@
 <?php
 
+namespace TreinaWeb;
+
 class MetodosDinamicos
 {
     protected $data = [];
