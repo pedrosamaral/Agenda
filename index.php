@@ -55,13 +55,20 @@ $dados = [
 			'site' 		=> 'http://www.treinaweb.com.br'
 			];
 
-$contato = new stdClass();
 
 //Definimos as propriedades do objeto contato
 $contato->nome = $dados["nome"];
 $contato->email = $dados["email"];
 $contato->telefone = $dados["telefone"];
 $contato->site = $dados["site"];
+
+//Criamos um objeto generico
+$contato = new stdClass();
+
+foreach ($dados as $chave => $valor) {
+	//criar a propriedade
+	$contato->$chave = $valor
+}
 
 //Impressão do projeto
 print_r($contato);
