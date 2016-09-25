@@ -65,10 +65,5 @@ $contato->site = $dados["site"];
 //Criamos um objeto generico
 $contato = new stdClass();
 
-foreach ($dados as $chave => $valor) {
-	//criar a propriedade
-	$contato->$chave = $valor
-}
-
 //Impressão do projeto
 print_r($contato);
